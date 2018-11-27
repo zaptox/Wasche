@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wasche.www.wasche">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/wascheicon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/wascheicon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SignIn_Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Sign_up" />
+        <activity android:name=".Forgot_password_activity" />
+        <activity
+            android:name=".ServicesActivity"
+            android:label="@string/title_activity_services" />
+        <activity android:name=".OrderActivity" />
+        <activity android:name=".OrderDetails" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AccountSettings" />
+        <activity android:name=".temperary"></activity>
+    </application>
+
+</manifest>
