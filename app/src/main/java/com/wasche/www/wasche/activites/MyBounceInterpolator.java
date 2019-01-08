@@ -1,4 +1,4 @@
-package com.wasche.www.wasche;
+package com.wasche.www.wasche.activites;
 
 class MyBounceInterpolator implements android.view.animation.Interpolator {
     private double mAmplitude = 1;

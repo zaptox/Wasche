@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/backround"
-    tools:context=".OrderActivity">
+    tools:context=".activites.OrderActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -227,7 +227,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <Button
-            android:id="@+id/angry_btn"
+            android:id="@+id/btnOrderDone"
             android:layout_width="match_parent"
 
             android:layout_height="40dp"

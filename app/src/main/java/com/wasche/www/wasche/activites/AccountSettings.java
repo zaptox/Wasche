@@ -1,13 +1,15 @@
-package com.wasche.www.wasche;
+package com.wasche.www.wasche.activites;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class temperary extends AppCompatActivity {
+import com.wasche.www.wasche.R;
+
+public class AccountSettings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temperary);
+        setContentView(R.layout.activity_account_settings);
     }
 }

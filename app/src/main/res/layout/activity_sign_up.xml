@@ -7,7 +7,7 @@
     android:background="@color/backround"
     android:scrollbars="vertical"
     android:paddingBottom="30dp"
-    tools:context=".Sign_up"
+    tools:context=".activites.Sign_up"
     tools:layout_editor_absoluteY="25dp">
 
     <android.support.constraint.ConstraintLayout
@@ -160,7 +160,7 @@
         app:layout_constraintVertical_bias="0.01999998" />
 
     <Button
-        android:id="@+id/angry_btn"
+        android:id="@+id/btnOrderDone"
         android:layout_width="match_parent"
 
         android:layout_height="40dp"

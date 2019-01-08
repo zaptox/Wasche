@@ -9,7 +9,7 @@
     android:background="@android:color/white"
     android:weightSum="10"
     android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-    tools:context=".ServicesActivity">
+    tools:context=".activites.ServicesActivity">
 
     <GridLayout
         android:columnCount="1"

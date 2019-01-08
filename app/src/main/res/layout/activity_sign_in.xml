@@ -7,7 +7,7 @@
     android:scrollbars="vertical"
     android:paddingBottom="30dp"
     android:background="@color/backround"
-    tools:context=".SignIn_Activity"
+    tools:context=".activites.SignInActivity"
     tools:layout_editor_absoluteY="25dp">
 
 
@@ -31,7 +31,7 @@
 
 
     <Button
-        android:id="@+id/angry_btn"
+        android:id="@+id/btnOrderDone"
         android:layout_width="match_parent"
 
         android:layout_height="40dp"
@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
 
@@ -78,7 +78,8 @@
         android:layout_marginTop="290dp"
         android:layout_marginEnd="60dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Email/ Phone Number "
+        android:text="zain@gmail.com"
         android:inputType="textPersonName"
         android:textColor="@android:color/white"
         android:textColorHint="@color/colorPrimary"
@@ -104,13 +105,14 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="355dp"
         android:layout_marginEnd="60dp"
         android:ems="10"
+        android:text="zain04"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="@android:color/white"

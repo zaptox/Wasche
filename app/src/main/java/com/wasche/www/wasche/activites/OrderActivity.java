@@ -1,19 +1,20 @@
-package com.wasche.www.wasche;
+package com.wasche.www.wasche.activites;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-public class Sign_up extends Activity {
+import com.wasche.www.wasche.R;
 
+public class OrderActivity extends AppCompatActivity {
 
 
     public void didTapButton(View view) {
-        Button button = (Button)findViewById(R.id.angry_btn);
+        Button button = (Button)findViewById(R.id.btnOrderDone);
 
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
@@ -22,16 +23,13 @@ public class Sign_up extends Activity {
         myAnim.setInterpolator(interpolator);
 
         button.startAnimation(myAnim);
+        Intent intent = new Intent(OrderActivity.this, AccountSettings.class);
+        startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
-
-
-
-
-
+        setContentView(R.layout.activity_order);
     }
 }

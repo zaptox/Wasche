@@ -1,4 +1,4 @@
-package com.wasche.www.wasche;
+package com.wasche.www.wasche.activites;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,10 +7,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-public class Forgot_password_activity extends Activity {
+import com.wasche.www.wasche.R;
+
+public class ForgotPasswordActivity extends Activity {
 
     public void didTapButton(View view) {
-        Button button = (Button)findViewById(R.id.angry_btn);
+        Button button = (Button)findViewById(R.id.btnOrderDone);
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         // Use bounce interpolator with amplitude 0.1 and frequency 20
