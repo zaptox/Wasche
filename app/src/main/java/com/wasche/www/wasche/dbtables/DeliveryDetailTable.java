@@ -47,6 +47,10 @@ public class DeliveryDetailTable extends Model
     @Column(name="serviceId" ,notNull = false)
     private Integer serviceId;
 
+    @Column(name="serviceName" ,notNull = false)
+    private String serviceName;
+
+
     @Column(name="itemImage" ,notNull = false)
     private  String  itemImage;
 
@@ -154,6 +158,14 @@ public class DeliveryDetailTable extends Model
         this.itemImage = itemImage;
     }
 
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
     @Override
     public String toString() {
         return "DeliveryDetailTable{" +
@@ -169,6 +181,7 @@ public class DeliveryDetailTable extends Model
                 ", urgentPercent=" + urgentPercent +
                 ", urgentStatus=" + urgentStatus +
                 ", serviceId=" + serviceId +
+                ", serviceName='" + serviceName + '\'' +
                 ", itemImage='" + itemImage + '\'' +
                 '}';
     }

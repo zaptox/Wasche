@@ -5,6 +5,12 @@
     <color name="colorAccent">#A9ABAA</color>
     <color name="blueText">#166ba1</color>
     <color name="backround">#262827</color>
+    <color name="editTextColor">#FFFFFF</color>
+    <color name="textviewColor">#166ba1</color>
+    <color name="hintColor">#9b9d9e</color>
+    <color name="urgentColor">#fd0d01</color>
+
+    <color name="black_overlay">#66000000</color>
 
 
 </resources>

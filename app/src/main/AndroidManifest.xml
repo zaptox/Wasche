@@ -19,7 +19,6 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
             </intent-filter>
         </activity>
 
@@ -30,20 +29,14 @@
             android:name="AA_DB_VERSION"
             android:value="5" />
 
-
-
         <provider
             android:name="com.activeandroid.content.ContentProvider"
             android:authorities="com.wasche.www.wasche"
             android:enabled="true"
-            android:exported="false">
-        </provider>
+            android:exported="false" />
 
         <activity android:name=".activites.Sign_up" />
         <activity android:name=".activites.ForgotPasswordActivity" />
-        <activity
-            android:name=".activites.ServicesActivity"
-            android:label="@string/title_activity_services" />
         <activity android:name=".activites.OrderActivity" />
         <activity android:name=".activites.OrderDetails" />
         <activity
@@ -52,16 +45,23 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activites.AccountSettings" />
-        <activity android:name=".activites.SplashScreenActvity"
+        <activity
+            android:name=".activites.SplashScreenActvity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activites.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".activites.ThankYouActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_thank_you"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>

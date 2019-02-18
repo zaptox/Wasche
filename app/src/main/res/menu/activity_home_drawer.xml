@@ -17,9 +17,9 @@
             android:icon="@drawable/ic_my_account_24dp"
             android:title="My Profile" />
         <item
-            android:id="@+id/nav_contact"
-            android:icon="@drawable/ic_contact_24dp"
-            android:title="Contact" />
+            android:id="@+id/nav_bucket"
+            android:icon="@drawable/bucket"
+            android:title="Bucket" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_black_24dp"

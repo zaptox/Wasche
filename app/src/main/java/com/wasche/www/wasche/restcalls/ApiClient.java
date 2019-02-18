@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ApiClient {
-    public static final String BASE_URL="http://zaptox.com/wasche_app/";
+    public static final String BASE_URL="http://waschetech.pk/wasche_app/";
     public static Retrofit retrofit=null;
 
     public static Retrofit getApiClient(){

@@ -10,19 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.activeandroid.query.Select;
 import com.wasche.www.wasche.R;
+import com.wasche.www.wasche.daoImp.ServiceDaoImpl;
 import com.wasche.www.wasche.adapter.ServicesListAdapter;
 
+import com.wasche.www.wasche.dao.ServiceDao;
 import com.wasche.www.wasche.dbtables.ServiceTable;
-import com.wasche.www.wasche.util.AppProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,9 +50,9 @@ public class HomeFragment extends Fragment {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context);
         recyclerViewServices.setLayoutManager(mLayoutManager);
          services=new ArrayList<>();
-
-         services=new Select().all().from(ServiceTable.class).execute();
-         generateServicesList(services);
+        //load services from local db
+        ServiceDao serviceDao=new ServiceDaoImpl();
+         generateServicesList(serviceDao.getServices());
 
 
 
@@ -70,8 +66,5 @@ public class HomeFragment extends Fragment {
     }
 
 
-    public void checkInternetConncetion(View view){
-
-    }
 
 }

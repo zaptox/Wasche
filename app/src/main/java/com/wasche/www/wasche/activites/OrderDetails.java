@@ -46,11 +46,6 @@ public class OrderDetails extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
 
-        iAdapter = new ItemAdapter(getApplicationContext(),itemList,true);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(iAdapter);
 
 
 

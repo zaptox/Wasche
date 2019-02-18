@@ -1,6 +1,7 @@
 package com.wasche.www.wasche.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,33 +12,41 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.activeandroid.query.Delete;
 import com.squareup.picasso.Picasso;
 import com.wasche.www.wasche.R;
+import com.wasche.www.wasche.activites.HomeActivity;
+import com.wasche.www.wasche.beans.DeliveryDetailBean;
 import com.wasche.www.wasche.dbtables.DeliveryDetailTable;
-import com.wasche.www.wasche.dbtables.ServiceTable;
+import com.wasche.www.wasche.util.CONST;
 
 import java.util.List;
 
 
-public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
+public class DeliveryDetailsAdapter extends RecyclerView.Adapter<DeliveryDetailsAdapter.MyViewHolder>{
 
-    private List<DeliveryDetailTable> deliveryDetailItems;
+    private List<DeliveryDetailBean> deliveryDetailItems;
     private boolean urgentDelivery;
+    private Context context;
+
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        public TextView itemName, tvTotalCost,tvQty;
+        public TextView itemName, tvTotalCost,tvQty,textViewPerPieceCost,textViewServiceTitle;
         public ImageButton imgBtnMinus;
-        public ImageView imageViewItemImage;
+        public ImageView imageViewItemImage,imageViewDelete;
         public Button buttonAddToCart;
 
         public MyViewHolder(View view) {
             super(view);
             itemName = (TextView) view.findViewById(R.id.tv_itemName);
             tvTotalCost = (TextView) view.findViewById(R.id.tvTotalCost);
+            textViewServiceTitle = (TextView) view.findViewById(R.id.textViewServiceTitle);
             tvQty = (TextView) view.findViewById(R.id.tvQty);
             imgBtnMinus=(ImageButton)view.findViewById(R.id.imageViewMinus);
             imageViewItemImage=(ImageView)view.findViewById(R.id.imageViewItemImage);
+            imageViewDelete=(ImageView)view.findViewById(R.id.imageViewDelete);
+            textViewPerPieceCost=(TextView)view.findViewById(R.id.textViewPerPieceCost);
 
 
         }
@@ -46,14 +55,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
 
     @Override
     public int getItemCount() {
-            return deliveryDetailItems.size();
+        return deliveryDetailItems.size();
     }
 
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_cart_row, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dd_row, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -61,34 +70,25 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
-        DeliveryDetailTable ddt = deliveryDetailItems.get(position);
-        holder.itemName.setText(ddt.getItemName());
-//        if(urgentDelivery==true) {
-//            holder.price.setText("Rs: " + item.getUrgentCost());
-//
-//        }
-//        else{
+
+        DeliveryDetailBean ddt=deliveryDetailItems.get(position);
+        holder.textViewPerPieceCost.setText("Rs: " + ddt.getCost());
         holder.tvTotalCost.setText("Rs: " + ddt.getTotalCost());
-        holder.tvQty.setText("QTY: " + ddt.getQuantity());
-//
-//        }
-        Picasso.get().load(ddt.getItemImage()).placeholder(R.drawable.loading).into(holder.imageViewItemImage);
+        holder.tvQty.setText("QTY: " + ddt.getQunatity());
+        holder.itemName.setText(ddt.getItemName());
+        holder.textViewServiceTitle.setText(ddt.getServiceName());
+        Picasso.get().load(ddt.getItemImageUrl()).placeholder(R.drawable.loading).into(holder.imageViewItemImage);
 
 
-//        holder.imgBtnMinus.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int qty=Integer.parseInt(""+holder.quantity.getText());
-//                qty--;
-//                holder.quantity.setText(""+qty);
-//            }
-//        });
-//    }
+
     }
 
-    public CartAdapter(List<DeliveryDetailTable> deliveryDetailItems){
+    public DeliveryDetailsAdapter(Context context, List<DeliveryDetailBean> deliveryDetailItems){
         this.deliveryDetailItems = deliveryDetailItems;
+        this.urgentDelivery=urgentDelivery;
+        this.context=context;
 
     }
+
 
 }

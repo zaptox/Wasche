@@ -13,8 +13,8 @@ public class UrgentBean implements Serializable
     @SerializedName("id")
     private Integer id;
 
-    @SerializedName("urgent_percent")
-    private  String urgentPercent;
+    @SerializedName("percent")
+    private  double urgentPercent;
 
 
     public Integer getId() {
@@ -33,11 +33,11 @@ public class UrgentBean implements Serializable
         this.response = response;
     }
 
-    public String getUrgentPercent() {
+    public double getUrgentPercent() {
         return urgentPercent;
     }
 
-    public void setUrgentPercent(String urgentPercent) {
+    public void setUrgentPercent(double urgentPercent) {
         this.urgentPercent = urgentPercent;
     }
 

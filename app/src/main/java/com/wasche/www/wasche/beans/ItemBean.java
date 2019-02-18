@@ -24,8 +24,12 @@ public class ItemBean implements Serializable
     private  Integer serviceId;
 
 
-    @SerializedName("image")
-    private  String  image;
+    @SerializedName("image_path")
+    private  String  imagePath;
+
+
+    @SerializedName("image_base_url")
+    private  String  imageBaseUrl;
 
     public String getResponse() {
         return response;
@@ -67,12 +71,20 @@ public class ItemBean implements Serializable
         this.serviceId = serviceId;
     }
 
-    public String getImage() {
-        return image;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
+    public String getImageBaseUrl() {
+        return imageBaseUrl;
+    }
+
+    public void setImageBaseUrl(String imageBaseUrl) {
+        this.imageBaseUrl = imageBaseUrl;
     }
 
     @Override
@@ -83,7 +95,8 @@ public class ItemBean implements Serializable
                 ", name='" + name + '\'' +
                 ", cost=" + cost +
                 ", serviceId=" + serviceId +
-                ", image='" + image + '\'' +
+                ", imagePath='" + imagePath + '\'' +
+                ", imageBaseUrl='" + imageBaseUrl + '\'' +
                 '}';
     }
 }

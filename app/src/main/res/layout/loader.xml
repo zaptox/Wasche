@@ -8,8 +8,8 @@
     <com.agrawalsuneet.dotsloader.loaders.TrailingCircularDotsLoader
         android:id="@+id/progressBar1"
         style="?android:attr/progressBarStyleLarge"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_gravity="center" />
 
 </LinearLayout>

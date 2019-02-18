@@ -10,25 +10,25 @@ import java.io.Serializable;
 @Table(name="UrgentTable")
 public class UrgentTable extends Model
 {
-    @Column(name="ItemId" ,unique = true)
-    private Integer ItemId;
+    @Column(name="urgentId" ,unique = true)
+    private Integer urgentId;
 
     @Column(name="urgentPercent" ,notNull = false)
-    private String urgentPercent;
+    private double urgentPercent;
 
-    public Integer getItemId() {
-        return ItemId;
+    public Integer getUrgentId() {
+        return urgentId;
     }
 
-    public void setItemId(Integer itemId) {
-        ItemId = itemId;
+    public void setUrgentId(Integer itemId) {
+        urgentId = itemId;
     }
 
-    public String getUrgentPercent() {
+    public double getUrgentPercent() {
         return urgentPercent;
     }
 
-    public void setUrgentPercent(String urgentPercent) {
+    public void setUrgentPercent(double urgentPercent) {
         this.urgentPercent = urgentPercent;
     }
 }

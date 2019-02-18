@@ -17,7 +17,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewLogoSplash"
         android:layout_width="wrap_content"
         android:layout_height="91dp"
         android:layout_marginTop="120dp"
@@ -40,7 +40,6 @@
         android:layout_marginTop="420dp"
         android:layout_marginEnd="60dp"
         android:background="@drawable/signin_buttonshape"
-        android:onClick="didTapButton"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
@@ -79,7 +78,7 @@
         android:layout_marginEnd="60dp"
         android:ems="10"
         android:hint="Email/ Phone Number "
-        android:text="zain@gmail.com"
+        android:text="vijaykumarxoni@outlook.com"
         android:inputType="textPersonName"
         android:textColor="@android:color/white"
         android:textColorHint="@color/colorPrimary"

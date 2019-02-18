@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class UserBean implements Serializable
+public class CustomerBean implements Serializable
 {
 
     @SerializedName("response")
@@ -50,12 +50,12 @@ public class UserBean implements Serializable
 
     @SerializedName("created_at")
     @Expose
-    String createdAt;
+    Integer createdAt;
 
 
     @SerializedName("updated_at")
     @Expose
-    String updatedAt;
+    Integer updatedAt;
 
     @SerializedName("created_by")
     @Expose
@@ -133,19 +133,19 @@ public class UserBean implements Serializable
         this.profilePicture = profilePicture;
     }
 
-    public String getCreatedAt() {
+    public Integer getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Integer createdAt) {
         this.createdAt = createdAt;
     }
 
-    public String getUpdatedAt() {
+    public Integer getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(Integer updatedAt) {
         this.updatedAt = updatedAt;
     }
 
@@ -175,7 +175,7 @@ public class UserBean implements Serializable
 
     @Override
     public String toString() {
-        return "UserBean{" +
+        return "CustomerBean{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", contact='" + contact + '\'' +

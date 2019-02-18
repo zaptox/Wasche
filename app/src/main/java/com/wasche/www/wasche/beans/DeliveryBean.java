@@ -25,9 +25,9 @@ public class DeliveryBean implements Serializable
     UrgentBean urgentBean;
 
 
-    @SerializedName("user")
+    @SerializedName("customer_id")
     @Expose
-    UserBean userBean;
+    Integer customerId;
 
 
     @SerializedName("expected_date")
@@ -38,6 +38,10 @@ public class DeliveryBean implements Serializable
     @SerializedName("delivered_at")
     @Expose
     String deliveryDate;
+
+    @SerializedName("quantity")
+    @Expose
+    int quantity;
 
 
     @SerializedName("urgent_status")
@@ -52,7 +56,7 @@ public class DeliveryBean implements Serializable
 
     @SerializedName("total_delivery_cost")
     @Expose
-    String totalDeliveryCost;
+    double totalDeliveryCost;
 
     @SerializedName("rider")
     @Expose
@@ -80,12 +84,12 @@ public class DeliveryBean implements Serializable
     @Expose
     Integer active;
 
-    public UserBean getUserBean() {
-        return userBean;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setUserBean(UserBean userBean) {
-        this.userBean = userBean;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getResponse() {
@@ -144,11 +148,11 @@ public class DeliveryBean implements Serializable
         this.deliveryStatus = deliveryStatus;
     }
 
-    public String getTotalDeliveryCost() {
+    public double getTotalDeliveryCost() {
         return totalDeliveryCost;
     }
 
-    public void setTotalDeliveryCost(String totalDeliveryCost) {
+    public void setTotalDeliveryCost(double totalDeliveryCost) {
         this.totalDeliveryCost = totalDeliveryCost;
     }
 
@@ -209,15 +213,25 @@ public class DeliveryBean implements Serializable
         this.urgentBean = urgentBean;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return "DeliveryBean{" +
-                "id=" + id +
+                "response='" + response + '\'' +
+                ", id=" + id +
                 ", address='" + address + '\'' +
                 ", urgentBean=" + urgentBean +
-                ", userBean=" + userBean +
+                ", customerId=" + customerId +
                 ", expectedDeliveryDate='" + expectedDeliveryDate + '\'' +
                 ", deliveryDate='" + deliveryDate + '\'' +
+                ", quantity=" + quantity +
                 ", urgent_status=" + urgent_status +
                 ", deliveryStatus='" + deliveryStatus + '\'' +
                 ", totalDeliveryCost='" + totalDeliveryCost + '\'' +

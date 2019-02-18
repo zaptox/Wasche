@@ -16,40 +16,57 @@ public class DeliveryDetailBean implements Serializable
     @Expose
     Integer id;
 
-    @SerializedName("delivery")
+    @SerializedName("qunatity")
     @Expose
-    DeliveryBean deliveryBean;
-
-    @SerializedName("service")
-    @Expose
-    ServiceBean serviceBean;
+    Integer qunatity;
 
 
-    @SerializedName("item")
+    @SerializedName("service_id")
     @Expose
-    ItemBean itemBean;
+    int serviceId;
+
+
+    @SerializedName("customer_id")
+    @Expose
+    int customerId;
+
+
+
+    @SerializedName("item_id")
+    @Expose
+    int itemId;
 
 
     @SerializedName("cost")
     @Expose
-    String cost;
+    double cost;
 
-
-
-
-    @SerializedName("created_at")
+    @SerializedName("total_cost")
     @Expose
-    String createdAt;
+    double totalCost;
 
 
-    @SerializedName("updated_at")
+    @SerializedName("item_image_url")
     @Expose
-    String updatedAt;
+    String itemImageUrl;
 
 
-    @SerializedName("active")
+    @SerializedName("service_name")
     @Expose
-    Integer active;
+    String serviceName;
+
+
+    @SerializedName("item_name")
+    @Expose
+    String itemName;
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
 
     public Integer getId() {
         return id;
@@ -59,73 +76,92 @@ public class DeliveryDetailBean implements Serializable
         this.id = id;
     }
 
-    public DeliveryBean getDeliveryBean() {
-        return deliveryBean;
+    public int getServiceId() {
+        return serviceId;
     }
 
-    public void setDeliveryBean(DeliveryBean deliveryBean) {
-        this.deliveryBean = deliveryBean;
+    public void setServiceId(int serviceId) {
+        this.serviceId = serviceId;
     }
 
-    public ServiceBean getServiceBean() {
-        return serviceBean;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setServiceBean(ServiceBean serviceBean) {
-        this.serviceBean = serviceBean;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public ItemBean getItemBean() {
-        return itemBean;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setItemBean(ItemBean itemBean) {
-        this.itemBean = itemBean;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
-    public String getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public double getTotalCost() {
+        return totalCost;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
     }
 
-    public String getUpdatedAt() {
-        return updatedAt;
+    public String getItemImageUrl() {
+        return itemImageUrl;
     }
 
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setItemImageUrl(String itemImageUrl) {
+        this.itemImageUrl = itemImageUrl;
     }
 
-    public Integer getActive() {
-        return active;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public void setActive(Integer active) {
-        this.active = active;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public Integer getQunatity() {
+        return qunatity;
+    }
+
+    public void setQunatity(Integer qunatity) {
+        this.qunatity = qunatity;
     }
 
     @Override
     public String toString() {
         return "DeliveryDetailBean{" +
-                "id=" + id +
-                ", deliveryBean=" + deliveryBean +
-                ", serviceBean=" + serviceBean +
-                ", itemBean=" + itemBean +
-                ", cost='" + cost + '\'' +
-                ", createdAt='" + createdAt + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                ", active=" + active +
+                "response='" + response + '\'' +
+                ", id=" + id +
+                ", qunatity=" + qunatity +
+                ", serviceId=" + serviceId +
+                ", customerId=" + customerId +
+                ", itemId=" + itemId +
+                ", cost=" + cost +
+                ", totalCost=" + totalCost +
+                ", itemImageUrl='" + itemImageUrl + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", itemName='" + itemName + '\'' +
                 '}';
     }
 }

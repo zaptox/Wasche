@@ -12,9 +12,27 @@ public class ServiceBean
     @SerializedName("name")
     private String name;
 
-    @SerializedName("image")
-    private String image;
+    @SerializedName("image_base_url")
+    private String imageBaseUrl;
 
+    @SerializedName("image_path")
+    private String imagePath;
+
+    public String getImageBaseUrl() {
+        return imageBaseUrl;
+    }
+
+    public void setImageBaseUrl(String imageBaseUrl) {
+        this.imageBaseUrl = imageBaseUrl;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 
     public int getServiceId() {
         return serviceId;
@@ -33,20 +51,13 @@ public class ServiceBean
         this.name = name;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     @Override
     public String toString() {
-        return "ServiceTable{" +
+        return "ServiceBean{" +
                 "serviceId=" + serviceId +
                 ", name='" + name + '\'' +
-                ", image='" + image + '\'' +
+                ", imageBaseUrl='" + imageBaseUrl + '\'' +
+                ", imagePath='" + imagePath + '\'' +
                 '}';
     }
 }

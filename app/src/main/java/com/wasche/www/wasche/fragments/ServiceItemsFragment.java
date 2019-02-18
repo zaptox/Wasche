@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +16,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.activeandroid.query.Select;
 import com.squareup.picasso.Picasso;
 import com.wasche.www.wasche.R;
+import com.wasche.www.wasche.daoImp.ItemDaoImpl;
 import com.wasche.www.wasche.adapter.ItemAdapter;
+import com.wasche.www.wasche.dao.ItemDao;
 import com.wasche.www.wasche.dbtables.ItemTable;
 
 import java.util.ArrayList;
@@ -36,6 +35,7 @@ public class ServiceItemsFragment extends Fragment {
     private String serviceTitle, serviceBannerImg;
     private Switch switchUrgentDelivery;
 
+
     public ServiceItemsFragment() {
         // Required empty public constructor
     }
@@ -47,20 +47,6 @@ public class ServiceItemsFragment extends Fragment {
         this.serviceBannerImg = serviceBannerImg;
     }
 
-//
-//    public void didTapButton(View view) {
-//        Button button = (Button)view.findViewById(R.id.btnLogin);
-//
-//        final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
-//
-//        // Use bounce interpolator with amplitude 0.1 and frequency 20
-//        MyBounceInterpolator interpolator = new MyBounceInterpolator(0.1, 50);
-//        myAnim.setInterpolator(interpolator);
-//
-//        button.startAnimation(myAnim);
-//        Intent intent = new Intent(OrderDetails.this,OrderActivity.class);
-//        startActivity(intent);
-//    }
 
     private List<ItemTable> itemList;
     private RecyclerView recyclerView;
@@ -77,9 +63,11 @@ public class ServiceItemsFragment extends Fragment {
         textViewUrgent=view.findViewById(R.id.textViewUrgent);
         switchUrgentDelivery=view.findViewById(R.id.switchUrgentDelivery);
         itemList = new ArrayList<>();
-        loadServiceItem();
+        // load items from local db
+        ItemDao itemDao=new ItemDaoImpl();
+        itemList=itemDao.getItemsByServiceId(serviceId);
 
-        iAdapter = new ItemAdapter(getContext(),itemList,false);
+        iAdapter = new ItemAdapter(getContext(),itemList,false,serviceTitle);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -89,7 +77,7 @@ public class ServiceItemsFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
-                    iAdapter = new ItemAdapter(getContext(),itemList,true);
+                    iAdapter = new ItemAdapter(getContext(),itemList,true,serviceTitle);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
                     recyclerView.setLayoutManager(mLayoutManager);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -99,7 +87,7 @@ public class ServiceItemsFragment extends Fragment {
 
                 }
                 else{
-                    iAdapter = new ItemAdapter(getContext(),itemList,false);
+                    iAdapter = new ItemAdapter(getContext(),itemList,false,serviceTitle);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
                     recyclerView.setLayoutManager(mLayoutManager);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -112,15 +100,8 @@ public class ServiceItemsFragment extends Fragment {
             }
         });
 
-        Button btnOrderDone = (Button) view.findViewById(R.id.btnOrderDone);
         linearLayoutServiceBannner = (LinearLayout) view.findViewById(R.id.llServiceBannner);
         textViewServiceBannerTitle = (TextView) view.findViewById(R.id.textViewServiceBannerTitle);
-        btnOrderDone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
 
 
@@ -150,9 +131,6 @@ public class ServiceItemsFragment extends Fragment {
 
     }
 
-    //
-    private void loadServiceItem() {
-        itemList=new Select().all().from(ItemTable.class).where("serviceId=?",serviceId).execute();
-    }
+
 }
 

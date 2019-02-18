@@ -1,6 +1,6 @@
 package com.wasche.www.wasche.restcalls;
 
-import com.wasche.www.wasche.beans.UserBean;
+import com.wasche.www.wasche.beans.CustomerBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -10,5 +10,6 @@ public interface UserAuthApi {
 
 
     @GET("user-management/Login.php")
-    Call<UserBean> performUserLogin(@Query("email") String email, @Query("password") String password);
+    Call<CustomerBean> performUserLogin(@Query("email") String email, @Query("password") String password);
 }
+
