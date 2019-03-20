@@ -227,7 +227,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewSetOrderTitle" />
 
         <Button
-            android:id="@+id/btnOrderDone"
+            android:id="@+id/btnSaveUpdates"
             android:layout_width="match_parent"
 
             android:layout_height="40dp"

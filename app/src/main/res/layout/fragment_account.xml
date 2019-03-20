@@ -1,162 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".activites.AccountSettings"
-        android:orientation="vertical">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.AccountSettings"
+    android:orientation="vertical">
 
-        <ScrollView
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backround"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp"
+                tools:ignore="MissingConstraints"
+                android:paddingBottom="20dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/imageViewprofileImage"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/blankprofile"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageViewEdit"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="190dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/edit" />
+
+            </android.support.constraint.ConstraintLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="80dp">
+                <TextView
+                    android:id="@+id/tvFullname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Full Name"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/headerLayout"
+                <EditText
+                    android:id="@+id/etFullname"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/backround"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="8dp"
-                    tools:ignore="MissingConstraints"
-                    android:paddingBottom="20dp">
-
-                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/profile_image"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:src="@drawable/mrrobot"
-                        app:civ_border_color="#FF000000"
-                        app:civ_border_width="0dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/imageView17"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="190dp"
-                        android:layout_marginEnd="20dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0"
-                        app:srcCompat="@drawable/edit" />
-
-                </android.support.constraint.ConstraintLayout>
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:inputType="textPersonName"/>
 
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tvMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Mobile"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:id="@+id/etMobile"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingBottom="80dp">
-                    <TextView
-                        android:id="@+id/tv_fullname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
-                        android:layout_marginTop="20dp"
-                        android:text="Full Name"
-                        android:textSize="16sp"
-                        android:textStyle="bold"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:inputType="textPersonName"/>
 
-                    <EditText
-                        android:id="@+id/et_fullname"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
-                        android:layout_marginEnd="60dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"/>
+                <TextView
+                    android:id="@+id/tv_Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Email"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
 
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:inputType="textPersonName"/>
 
-                    <TextView
-                        android:id="@+id/tv_mobile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
-                        android:layout_marginTop="0dp"
-                        android:text="Mobile"
-                        android:textSize="16sp"
-                        android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Address"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/et_mobile"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
-                        android:layout_marginEnd="60dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"/>
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:inputType="textPersonName"/>
 
-                    <TextView
-                        android:id="@+id/tv_Email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
-                        android:layout_marginTop="0dp"
-                        android:text="Email"
-                        android:textSize="16sp"
-                        android:textStyle="bold"/>
-
-                    <EditText
-                        android:id="@+id/et_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
-                        android:layout_marginEnd="60dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"/>
-
-                    <TextView
-                        android:id="@+id/tv_address"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
-                        android:layout_marginTop="0dp"
-                        android:text="Address"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <EditText
-                        android:id="@+id/et_address"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="60dp"
-                        android:layout_marginEnd="60dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"/>
-
-                </LinearLayout>
+                <Button
+                    android:id="@+id/btnSaveUpdates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="60dp"
+                    android:background="@drawable/signin_buttonshape"
+                    android:shadowColor="#A8A8A8"
+                    android:shadowDx="0"
+                    android:layout_marginTop="5dp"
+                    android:visibility="gone"
+                    android:shadowDy="0"
+                    android:layout_marginBottom="50dp"
+                    android:shadowRadius="5"
+                    android:text="Save"
+                    android:textColor="#166ba1"
+                    android:textSize="18sp"
+                    />
 
             </LinearLayout>
 
-        </ScrollView>
+        </LinearLayout>
+
+    </ScrollView>
 
 
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <android.support.design.widget.BottomNavigationView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent">
+            android:background="@color/colorPrimaryDark"
+            app:menu="@menu/bottom_nevigation" />
 
-            <android.support.design.widget.BottomNavigationView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"
-                app:menu="@menu/bottom_nevigation" />
-
-        </RelativeLayout>
-    </android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

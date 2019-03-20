@@ -12,7 +12,7 @@ import com.wasche.www.wasche.R;
 public class ForgotPasswordActivity extends Activity {
 
     public void didTapButton(View view) {
-        Button button = (Button)findViewById(R.id.btnOrderDone);
+        Button button = (Button)findViewById(R.id.btnSaveUpdates);
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
         // Use bounce interpolator with amplitude 0.1 and frequency 20

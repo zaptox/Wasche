@@ -3,8 +3,6 @@ package com.wasche.www.wasche.activites;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.animation.Animation;
@@ -22,7 +20,7 @@ public class OrderDetails extends AppCompatActivity {
 
 
     public void didTapButton(View view) {
-        Button button = (Button)findViewById(R.id.btnOrderDone);
+        Button button = (Button)findViewById(R.id.btnSaveUpdates);
 
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 

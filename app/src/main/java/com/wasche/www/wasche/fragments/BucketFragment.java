@@ -1,7 +1,6 @@
 package com.wasche.www.wasche.fragments;
 
 
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -59,7 +58,7 @@ public class BucketFragment extends Fragment {
 
         recyclerView=(RecyclerView) view.findViewById(R.id.recyclerViewCart);
         recyclerView.setHasFixedSize(true);
-        btnOrderDone=(Button)view.findViewById(R.id.btnOrderDone);
+        btnOrderDone=(Button)view.findViewById(R.id.btnSaveUpdates);
         tvTotalBill=(TextView)view.findViewById(R.id.tvTotalBill);
         textViewQty=(TextView)view.findViewById(R.id.textViewQty);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

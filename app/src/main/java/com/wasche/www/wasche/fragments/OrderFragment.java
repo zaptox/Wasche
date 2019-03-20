@@ -14,7 +14,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,8 +31,6 @@ import com.wasche.www.wasche.dbtables.DeliveryDetailTable;
 import com.wasche.www.wasche.restcalls.ApiClient;
 import com.wasche.www.wasche.restcalls.DeliveryApi;
 import com.wasche.www.wasche.util.Prefrences;
-
-import org.jetbrains.annotations.TestOnly;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -75,13 +72,13 @@ public class OrderFragment extends Fragment implements DatePickerDialog.OnDateSe
         // Inflate the layout for this fragment
          View view= inflater.inflate(R.layout.fragment_order, container, false);
         switchUserMyAccountDetails=(Switch)view.findViewById(R.id.switchUserMyAccountDetails);
-        btnOrderDone=(Button)view.findViewById(R.id.btnOrderDone);
+        btnOrderDone=(Button)view.findViewById(R.id.btnSaveUpdates);
         editTextFName=(EditText)view.findViewById(R.id.editTextFName);
         editTextLname=(EditText)view.findViewById(R.id.editTextLname);
         editTextEmail=(EditText)view.findViewById(R.id.editTextEmail);
         editTextPhone=(EditText)view.findViewById(R.id.editTextPhone);
         editTextAddress=(EditText)view.findViewById(R.id.editTextAddress);
-        btnOrderDone=(Button)view.findViewById(R.id.btnOrderDone);
+        btnOrderDone=(Button)view.findViewById(R.id.btnSaveUpdates);
         textViewDate=(TextView)view.findViewById(R.id.textViewDate);
         imageViewDate=(ImageView) view.findViewById(R.id.imageViewDate);
         linearLayout=(LinearLayout)view.findViewById(R.id.linearLayoutBase);

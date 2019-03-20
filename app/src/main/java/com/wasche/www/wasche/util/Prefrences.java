@@ -22,6 +22,9 @@ public class Prefrences {
 
 
     public void addtosharedpreference(Context context,CustomerBean customerBean){
+        SharedPreferences sharedPreferences =context.getSharedPreferences(USER_DETAILS_PREFRENCES, Context.MODE_PRIVATE);
+        sharedPreferences.edit().clear().commit();
+
 
         SharedPreferences sharedPreferencespre =context.getSharedPreferences(USER_DETAILS_PREFRENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferencespre.edit();

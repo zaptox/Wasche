@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -103,7 +102,7 @@ public class HomeActivity extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         TextView tvNavName = (TextView) headerView.findViewById(R.id.tv_name);
         TextView tvNavPhone = (TextView) headerView.findViewById(R.id.tv_contact);
-        CircleImageView imageViewProfileDrawer = (CircleImageView) headerView.findViewById(R.id.profile_image);
+        CircleImageView imageViewProfileDrawer = (CircleImageView) headerView.findViewById(R.id.imageViewprofileImage);
         imageViewProfileDrawer.setImageResource(R.drawable.mrrobot);
 
         Prefrences prefrences=new Prefrences();

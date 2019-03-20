@@ -14,7 +14,7 @@ public class OrderActivity extends AppCompatActivity {
 
 
     public void didTapButton(View view) {
-        Button button = (Button)findViewById(R.id.btnOrderDone);
+        Button button = (Button)findViewById(R.id.btnSaveUpdates);
 
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
 
